@@ -2,7 +2,7 @@ model=$1
 dataset=$2
 gpu=$3
 
-root=.
+root=$PWD
 run=${root}/scripts/pretrain_${model}.py
 config=${root}/configs/${model}/
 taskname=${model}_${dataset}_pretrain
