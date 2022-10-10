@@ -1,11 +1,9 @@
 import os
 import random
 
-percentage = 20
+percentage = 70
 
-# folder_data = '../../data/opensarship'
-folder_data = '../../data/gaofen4plane'
-# folder_data = '../../data/rsscn'
+folder_data = '/home/xuyin/data/fusarship'
 
 ls_train = []
 ls_val = []

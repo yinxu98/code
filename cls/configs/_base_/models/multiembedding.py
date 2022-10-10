@@ -1,4 +1,6 @@
-__vector_dim = 2048
+# __vector_dim = 512  # res18,34
+__vector_dim = 2048 # res50
+
 model = dict(
     type='MultiEmbedding',
     backbone=dict(

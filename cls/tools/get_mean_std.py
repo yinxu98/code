@@ -4,7 +4,7 @@ import numpy as np
 from PIL import Image
 from tqdm import tqdm
 
-folder_root = '../../data/rsscn'
+folder_root = '../../data/fusarship'
 
 ls_folder = [d.name for d in os.scandir(folder_root) if d.is_dir()]
 

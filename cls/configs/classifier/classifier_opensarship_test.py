@@ -3,4 +3,4 @@ _base_ = [
     '../_base_/datasets/opensarship.py',
 ]
 
-model = dict(classifier=dict(dim_out=3))
+model = dict(classifier=dict(dim_out=5))

@@ -1,0 +1,14 @@
+opensarship,supervised,res18,ft,ep200,7445
+opensarship,supervised,res34,ft,ep200,7599
+opensarship,supervised,res50,ft,ep200,7007
+opensarship,multiembedding,res18,ft,ep200,7572
+opensarship,multiembedding,res34,ft,ep200,7599
+opensarship,multiembedding,res50,ft,ep200,7673
+opensarship,aet,res50,ep200,6858
+
+fusarship,supervised,res18,ft,ep200,8049
+fusarship,supervised,res34,ft,ep200,7924
+fusarship,supervised,res50,ft,ep200,7544
+fusarship,multiembedding,res18,ft,ep200,7927
+fusarship,multiembedding,res34,ft,ep200,7666
+fusarship,multiembedding,res50,ft,ep200,7718

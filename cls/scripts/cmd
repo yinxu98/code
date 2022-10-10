@@ -1,0 +1,2 @@
+scripts/test.sh opensarship single ft 3
+scripts/pretrain_single.sh model opensarship 3

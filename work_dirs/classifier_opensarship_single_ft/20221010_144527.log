@@ -1,0 +1,35 @@
+model = dict(
+    type='Classifier',
+    backbone=dict(
+        type='MyResNetV1d',
+        depth=34,
+        num_stages=4,
+        out_indices=(0, 1, 2, 3),
+        frozen_stages=1,
+        norm_cfg=dict(type='BN', requires_grad=True),
+        norm_eval=True,
+        style='pytorch',
+        init_cfg=dict(
+            type='ft', checkpoint='../work_dirs/untrained/ResNetV1d18.pth')),
+    classifier=dict(dim_in=512, dim_mid=256, dim_out=5))
+optimizer = dict(type='SGD', lr=0.001, momentum=0.9, weight_decay=0.0001)
+runner = dict(epoch=200)
+data = dict(
+    type='OpenSARShip',
+    root='../data/opensarship',
+    n_class=5,
+    percentage=70,
+    image_size=64,
+    normalize=dict(
+        mean=[
+            0.026807075832908405, 0.026807075832908405, 0.026807075832908405
+        ],
+        std=[0.039102898421077066, 0.039102898421077066,
+             0.039102898421077066]),
+    workers=2,
+    batch_size=dict(pretrain=1024, train=512, val=2048))
+checkpoints = dict(
+    folders=['../work_dirs/untrained'], index=['ResNetV1d18.pth'])
+test_mode = 'ft'
+work_dir = '../work_dirs/classifier_opensarship_single_ft'
+log_file = '../work_dirs/classifier_opensarship_single_ft/20221010_144527.log'

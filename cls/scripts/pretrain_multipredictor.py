@@ -4,7 +4,7 @@ from os import path as osp
 
 import mmcv
 import torch
-from cls.datasets import build_data_loader_single
+from cls.datasets import build_data_loader_meco
 from cls.models import build_model
 from cls.tools import (AverageMeter, ProgressMeter, TimeMeter,
                        adjust_learning_rate, build_criterion_sim,
@@ -30,7 +30,7 @@ def train(cfg):
     model = build_model(cfg.model)
 
     # Dataset
-    data_loader = build_data_loader_single(cfg.data)
+    data_loader = build_data_loader_meco(cfg.data)
 
     # Optimizer
     init_lr = cfg.optimizer.lr * cfg.data.batch_size.pretrain / 512

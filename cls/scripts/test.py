@@ -6,7 +6,7 @@ from os import path as osp
 import mmcv
 import torch
 from addict import Dict
-from cls.datasets import build_data_loader
+from cls.datasets import build_data_loader_test
 from cls.models import build_model
 from cls.tools import (AverageMeter, MetricsMeter, ProgressMeter, TimeMeter,
                        adjust_learning_rate, build_criterion_cls,
@@ -32,8 +32,8 @@ def test(cfg):
     model = build_model(cfg.model)
 
     # Dataset
-    data_loader_train = build_data_loader(cfg.data, mode='train')
-    data_loader_val = build_data_loader(cfg.data, mode='val')
+    data_loader_train = build_data_loader_test(cfg.data, mode='train')
+    data_loader_val = build_data_loader_test(cfg.data, mode='val')
 
     # Optimizer
     init_lr = cfg.optimizer.lr * cfg.data.batch_size.train / 512
